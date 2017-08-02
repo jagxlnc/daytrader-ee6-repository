@@ -219,11 +219,24 @@
 							</resources>
 						</configuration>
 					</execution>
-					<!-- uncomment for docker <execution> <id>copy-dockerfile</id> <phase>package</phase> 
-						<goals> <goal>copy-resources</goal> </goals> <configuration> <outputDirectory>${project.build.directory}</outputDirectory> 
-						<resources> <resource> <directory>${project.basedir}/src/main/resources/docker</directory> 
-						<includes> <include>Dockerfile</include> </includes> </resource> </resources> 
-						</configuration> </execution> -->
+					<execution> 
+						<id>copy-dockerfile</id> 
+						<phase>package</phase> 
+						<goals> 
+							<goal>copy-resources</goal> 
+						</goals> 
+						<configuration> 
+							<outputDirectory>${project.build.directory}</outputDirectory> 
+						<resources> 
+							<resource> 
+								<directory>${project.basedir}/src/main/resources/docker</directory> 
+								<includes> 
+									<include>Dockerfile</include> 
+								</includes> 
+							</resource> 
+						</resources> 
+						</configuration> 
+					</execution>
 				</executions>
 			</plugin>
 
@@ -293,12 +306,25 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- uncoment for docker <plugin> <groupId>com.spotify</groupId> <artifactId>dockerfile-maven-plugin</artifactId> 
-				<version>1.3.3</version> <executions> <execution> <phase>package</phase> 
-				<goals> <goal>build</goal> </goals> </execution> </executions> <configuration> 
-				<dockerHost>192.168.99.100</dockerHost> <contextDirectory>${project.build.directory}</contextDirectory> 
-				<repository>${project.artifactId}</repository> <tag>${project.version}</tag> 
-				</configuration> </plugin> -->
+			<plugin> 
+				<groupId>com.spotify</groupId> 
+				<artifactId>dockerfile-maven-plugin</artifactId> 
+				<version>1.3.3</version> 
+				<executions> 
+				 	<execution> 
+						<phase>package</phase> 
+							<goals>
+					 			<goal>build</goal> 
+							</goals> 
+					</execution> 
+				</executions> 
+				<configuration> 
+					<dockerHost>192.168.1.6</dockerHost> 
+					<contextDirectory>${project.build.directory}</contextDirectory> 
+					<repository>${project.artifactId}</repository> 
+					<tag>${project.version}</tag> 
+				</configuration> 
+			</plugin>
 		</plugins>
 	</build>
 
