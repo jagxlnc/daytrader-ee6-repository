@@ -312,7 +312,7 @@
 			</plugin>
 
 
-			<!--<plugin> 
+			<plugin> 
 				<groupId>com.spotify</groupId> 
 				<artifactId>docker-maven-plugin</artifactId> 
 				<version>0.4.13</version> 
@@ -328,35 +328,9 @@
 					<dockerDirectory>${project.build.directory}</dockerDirectory>
 					<imageName>dhvines/${project.artifactId}:${project.version}</imageName>
 					<dockerHost>https://192.168.99.100:2376</dockerHost>
-                			<dockerCertPath>/Users/jagdish/.docker/machine/machines/daytrader</dockerCertPath> 
+                			<dockerCertPath>/Users/Shared/Jenkins/daytraderCerts</dockerCertPath> 
 				</configuration> 
-			</plugin> -->
-			
-      			<plugin>
-        			<groupId>org.jolokia</groupId>
-        			<artifactId>docker-maven-plugin</artifactId>
-				<version>0.13.4</version> 
-				<executions> 
-					<execution> 
-						<phase>package</phase> 
-						<goals> 
-							<goal>build</goal> 
-						</goals> 
-					</execution> 
-				</executions> 
-				<configuration>
-					<images>
-           				 	<image>
-              						<name>dhvines/${project.artifactId}:${project.version}</name>
-					  		<build>
-						  		<assembly>
-							  		<dockerFileDir>${project.build.directory}</dockerFileDir>
-						  		</assembly>
-					  		</build>
-						</image>
-					</images>
-				</configuration>
-			</plugin>			  
+			</plugin> 			  
 		</plugins>
 	</build>
 
