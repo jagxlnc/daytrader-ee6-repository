@@ -327,7 +327,7 @@
 				<configuration> 
 					<dockerDirectory>${project.build.directory}</dockerDirectory>
 					<imageName>dhvines/${project.artifactId}:${project.version}</imageName>
-					<dockerHost>tcp://192.168.99.100:2376</dockerHost>
+					<dockerHost>https://192.168.99.100:2376</dockerHost>
                 			<dockerCertPath>/Users/jagdish/.docker/machine/machines/daytrader</dockerCertPath>
 				</configuration> 
 			</plugin>
